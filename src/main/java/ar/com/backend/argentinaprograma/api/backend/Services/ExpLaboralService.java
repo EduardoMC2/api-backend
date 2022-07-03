@@ -1,13 +1,40 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ar.com.backend.argentinaprograma.api.backend.Services;
 
-/**
- *
- * @author bruce
- */
+import ar.com.backend.argentinaprograma.api.backend.Models.ExpLaboral;
+import ar.com.backend.argentinaprograma.api.backend.Repositories.ExpLaboralRepository;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class ExpLaboralService {
-    
+     @Autowired
+    ExpLaboralRepository expLaboralRepository;
+
+    public ArrayList<ExpLaboral> getAllExpLaboral() {
+        return (ArrayList<ExpLaboral>) expLaboralRepository.findAll();
+    }
+
+    public ExpLaboral save(ExpLaboral expLaboral) {
+        return expLaboralRepository.save(expLaboral);
+    }
+
+    public ExpLaboral getExpLaboralById(Long Id) {
+        return expLaboralRepository.findById(Id).get();
+    }
+
+    public boolean deleteById(Long Id) {
+        try {
+            expLaboralRepository.deleteById(Id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public List<ExpLaboral> getExpLaboralByPersonId(Long personId) {
+           return expLaboralRepository.findAllByPersonId(personId);
+    }
 }
