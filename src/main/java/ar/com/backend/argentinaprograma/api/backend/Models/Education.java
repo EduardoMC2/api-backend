@@ -25,6 +25,13 @@ public class Education implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    private Long anioComienzo;
+    
+    
+    private Long anioFinal;
+
+   
 
     private String title;
 
@@ -71,5 +78,20 @@ public class Education implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+    
+         public Long getAnioComienzo() {
+        return anioComienzo;
+    }
 
+    public void setAnioComienzo(Long anioComienzo) {
+        this.anioComienzo = anioComienzo;
+    }
+
+    public Long getAnioFinal() {
+        return anioFinal;
+    }
+
+    public void setAnioFinal(Long anioFinal) {
+        this.anioFinal = anioFinal;
+    }
 }
