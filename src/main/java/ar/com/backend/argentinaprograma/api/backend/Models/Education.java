@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ar.com.backend.argentinaprograma.api.backend.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -26,10 +23,7 @@ public class Education implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private Long anioComienzo;
-    
-    
-    private Long anioFinal;
+    private Long anios;
 
    
 
@@ -79,19 +73,12 @@ public class Education implements Serializable {
         this.description = description;
     }
     
-         public Long getAnioComienzo() {
-        return anioComienzo;
+         public Long getAnios() {
+        return anios;
     }
 
-    public void setAnioComienzo(Long anioComienzo) {
-        this.anioComienzo = anioComienzo;
+    public void setAnios(Long anios) {
+        this.anios = anios;
     }
 
-    public Long getAnioFinal() {
-        return anioFinal;
-    }
-
-    public void setAnioFinal(Long anioFinal) {
-        this.anioFinal = anioFinal;
-    }
 }
